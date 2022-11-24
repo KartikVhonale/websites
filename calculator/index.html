@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            body{
+                background-color: rgba(86, 126, 126, 0.5);
+            }
+            *{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+            }
+            input[type="button"]{
+                    height:50px;
+                    border-radius:50%;
+                    border-color: rgb(189, 180, 180);
+                    background-color:#cccbcbbd;
+                    color:rgb(49, 48, 48);
+                    font-size: large;
+                    font-weight: bold;
+                    width:50px;
+                    box-shadow:0px;
+                }
+
+            input[type="button"]:hover{
+                    border-radius: 50%;
+                    background-color:#aef7ff;
+                }
+            input[type="text"]{
+                    width: 220px;
+                    height: 120px;
+                    background-color: red;
+                    text-align: right;
+                    color: white;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    border: 20px;
+                    border-color: rgb(82, 82, 82);
+                    font-size: 40px;
+                    font-weight: bold;
+                    padding-right:15px ;
+                    
+                }
+            ::placeholder{
+                color: white;
+            }
+            .calculator{
+                width: 240px;
+                border: rgb(167, 164, 164) 5px solid;
+                border-radius: 15px;
+                background-color: rgb(255, 255, 255);
+            }
+            
+        </style>
+
+<!-- JAVASCRIPT CODE -->
+
+        <script>
+            function clr(){
+            document.getElementById("box").value="";
+            }
+            
+            function data(val){
+            document.getElementById("box").value+=val;
+            }
+            
+            function  calculate(){
+            var x=document.getElementById("box").value;
+            document.getElementById("box").value=eval(x);
+            }
+        </script>
+
+    </head>
+    <body>
+        <center>
+            <h1>Calculator</h1>
+            <div class="calculator">
+                <table>
+                    <tr>
+                    
+                    <td colspan="4"><input type="text" id="box" placeholder="0" disabled/></td>
+                    </tr>                
+                    <div class="button">
+                        
+                    <tr>
+                        <td><input type="button" value="7" onclick="data('7')"/></td>
+                        <td><input type="button" value="8" onclick="data('8')"/></td>
+                        <td><input type="button" value="9" onclick="data('9')"/></td>
+                        <td><input type="button" value="+" onclick="data('+')"/></td>
+                        </tr>                
+            
+                        <tr>
+                        
+                        <td><input type="button" value="4" onclick="data('4')"/></td>
+                        <td><input type="button" value="5" onclick="data('5')"/></td>
+                        <td><input type="button" value="6" onclick="data('6')"/></td>
+                        <td><input type="button" value="-" onclick="data('-')"/></td>
+                        </tr>                
+            
+                        <tr>
+                        <td><input type="button" value="1" onclick="data('1')"/></td>
+                        <td><input type="button" value="2" onclick="data('2')"/></td>
+                        <td><input type="button" value="3" onclick="data('3')"/></td>
+                        <td><input type="button" value="*" onclick="data('*')"/></td>
+                        </tr>                
+            
+                        <tr>
+                        <td><input type="button" value="0" onclick="data('0')"/></td>
+                        <td><input type="button" value="." onclick="data('.')"/></td>
+                        <td><input type="button" value="/" onclick="data('/')"/></td>
+                        <td><input type="button" value="=" onclick="calculate()" style="background-color: rgb(255, 0, 0); color: white;"></td>
+                        </tr>                
+                    </div>
+                    
+                    </table>
+                    <div class="clr">
+                        <td>
+                            <input type="button" id="clear" value="C" onclick="clr()" style="padding-left:20px;padding-right:20px;border-radius: 0%;width: 215px; border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"/>
+                        </td>
+                    </div>
+            </div>
+        </center>
+
+
+    </body>
+</html>
